@@ -50,7 +50,7 @@ sandbox-platform/
 
 ## Getting Started
 
-The project is in the **planning / initial development stage**. Setup and build instructions will be added when the first VS Code extension skeleton is implemented.
+The Phase 1 extension shell lives in [`extension/`](extension/). It uses mock data only and runs without Firebase, authentication, or a backend. See [the extension README](extension/README.md) for prerequisites, launch instructions, and test commands.
 
 ## Architecture Principles
 

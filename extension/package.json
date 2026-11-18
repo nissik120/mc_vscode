@@ -1,0 +1,102 @@
+{
+  "name": "coding-sandbox",
+  "displayName": "Coding Sandbox",
+  "description": "VS Code-native coding sandbox project tools.",
+  "version": "0.1.0",
+  "publisher": "sandbox-platform",
+  "license": "UNLICENSED",
+  "private": true,
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onView:sandbox.myProjects",
+    "onCommand:sandbox.createProject",
+    "onCommand:sandbox.openProject",
+    "onCommand:sandbox.refreshProjects",
+    "onCommand:sandbox.showWelcome"
+  ],
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "sandbox",
+          "title": "Sandbox",
+          "icon": "resources/sandbox.svg"
+        }
+      ]
+    },
+    "views": {
+      "sandbox": [
+        {
+          "id": "sandbox.myProjects",
+          "name": "My Projects"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "sandbox.createProject",
+        "title": "Sandbox: Create Project"
+      },
+      {
+        "command": "sandbox.openProject",
+        "title": "Sandbox: Open Project"
+      },
+      {
+        "command": "sandbox.refreshProjects",
+        "title": "Sandbox: Refresh Projects",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "sandbox.showWelcome",
+        "title": "Sandbox: Show Welcome"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "sandbox.refreshProjects",
+          "when": "view == sandbox.myProjects",
+          "group": "navigation"
+        },
+        {
+          "command": "sandbox.createProject",
+          "when": "view == sandbox.myProjects",
+          "group": "navigation@1"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "sandbox.openProject",
+          "when": "view == sandbox.myProjects && viewItem == sandbox.project",
+          "group": "inline"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext .ts",
+    "pretest": "npm run compile && npm run lint",
+    "test": "vscode-test",
+    "test:smoke": "vscode-test --label smoke"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^20.17.24",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "@vscode/test-cli": "^0.0.11",
+    "@vscode/test-electron": "^2.5.2",
+    "eslint": "^8.57.1",
+    "typescript": "^5.8.3"
+  }
+}
