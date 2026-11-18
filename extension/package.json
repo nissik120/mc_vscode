@@ -7,7 +7,8 @@
   "license": "UNLICENSED",
   "private": true,
   "engines": {
-    "vscode": "^1.85.0"
+    "vscode": "^1.85.0",
+    "node": "^20.19.0 || ^22.13.0 || >=24.0.0"
   },
   "categories": [
     "Other"
@@ -92,10 +93,10 @@
     "@types/mocha": "^10.0.10",
     "@types/node": "^20.17.24",
     "@types/vscode": "^1.85.0",
-    "@typescript-eslint/eslint-plugin": "^7.18.0",
-    "@typescript-eslint/parser": "^7.18.0",
-    "@vscode/test-cli": "^0.0.11",
-    "@vscode/test-electron": "^2.5.2",
+    "@typescript-eslint/eslint-plugin": "^8.73.0",
+    "@typescript-eslint/parser": "^8.73.0",
+    "@vscode/test-cli": "^0.0.15",
+    "@vscode/test-electron": "^3.1.0",
     "eslint": "^8.57.1",
     "typescript": "^5.8.3"
   }

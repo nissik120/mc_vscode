@@ -10,7 +10,7 @@ Run commands from this directory:
 cd /Users/nvision/Documents/Workspace/Gigs/msc-sandbox/extension
 ```
 
-Install a supported Node.js LTS release and npm, then install the development dependencies:
+Install Node.js 20.19+, Node.js 22.13+, or a newer supported release with npm, then install the development dependencies:
 
 ```sh
 npm install
